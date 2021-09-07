@@ -1,0 +1,13 @@
+﻿@page "/binding"
+
+
+<h3>Binding</h3>
+
+<p>Value: @_value</p>
+<!--<input type="range" step="1" @bind-value="_value" />-->
+<input type="range" step="1" @bind-value="_value" @bind-value:event="oninput" /> <!-- 실시간 변경 -->
+
+@code {
+    // html 측면에서 묶어주는 것. ⇒ Binding
+    int _value = 15;
+}
