@@ -75,8 +75,15 @@ using Lecture_CSharpBlazorApplication.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/binding")]
-    public partial class Binding : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\User.razor"
+using Lecture_CSharpBlazorApplication.Data;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/user")]
+    public partial class User : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -84,10 +91,47 @@ using Lecture_CSharpBlazorApplication.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 10 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\Binding.razor"
+#line 37 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\User.razor"
        
-    // html 측면에서 묶어주는 것. ⇒ Binding
-    int _value = 15;
+    List<UserData> _users = new List<UserData>();
+    string _inputName;
+
+    string _btnClass = "btn btn-primary";
+
+    // page 호출 시, 호출되는 함수.
+    // Unity로 따지면 Start() 같은 함수.
+    protected override void OnInitialized()
+    {
+        _users.Add(new UserData() { Name = "Jongseon" });
+        _users.Add(new UserData() { Name = "Jongwon" });
+        _users.Add(new UserData() { Name = "Alrisia" });
+        RefreshButton();
+    }
+
+    void AddUser()
+    {
+        _users.Add(new UserData() { Name = _inputName });
+        _inputName = "";
+        RefreshButton();
+    }
+
+    void KickUser(UserData user)
+    {
+        _users.Remove(user);
+        RefreshButton();
+    }
+
+    void RefreshButton()
+    {
+        if (_users.Count % 2 == 0)
+        {
+            _btnClass = "btn btn-primary";
+        }
+        else
+        {
+            _btnClass = "btn btn-secondary";
+        }
+    }
 
 #line default
 #line hidden

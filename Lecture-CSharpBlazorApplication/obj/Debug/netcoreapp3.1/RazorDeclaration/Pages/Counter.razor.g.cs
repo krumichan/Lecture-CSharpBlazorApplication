@@ -75,6 +75,13 @@ using Lecture_CSharpBlazorApplication.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\Counter.razor"
+using System.Threading;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
     public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -84,13 +91,25 @@ using Lecture_CSharpBlazorApplication.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\Counter.razor"
+#line 13 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\Counter.razor"
        
     private int currentCount = 0;
 
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    private void AutoIncrement()
+    {
+        var timer = new Timer(x =>
+        {
+            InvokeAsync(() =>
+            {
+                IncrementCount();
+                StateHasChanged();  // 수동으로 page 갱신.
+            });
+        }, null, 1000, 1000);
     }
 
 #line default
