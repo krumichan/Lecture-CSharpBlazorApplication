@@ -29,6 +29,17 @@ namespace Lecture_CSharpBlazorApplication
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            // dependency injection ( 의존 주입 )
+            services.AddSingleton<IFoodService, FastFoodService>();
+
+            // 생성자에서 위의 주입을 알아서 연결해준다.
+            services.AddSingleton<PaymentService>();
+
+            // 추가를 위한 3가지 방식.
+            services.AddSingleton<SingletonService>();
+            services.AddTransient<TransientService>();
+            services.AddScoped<ScopedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
