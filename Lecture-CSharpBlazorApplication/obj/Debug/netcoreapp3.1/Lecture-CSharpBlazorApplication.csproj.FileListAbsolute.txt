@@ -54,3 +54,7 @@ C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\Razor\Pages\User.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ShowUser.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\Razor\Pages\ShowUser.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchDataSep.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\Razor\Pages\FetchDataSep.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\TableTemplate.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\Razor\Pages\TableTemplate.razor.g.cs

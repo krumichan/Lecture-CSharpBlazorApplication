@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Lecture_CSharpBlazorApplication.Shared
+namespace Lecture_CSharpBlazorApplication.Pages
 {
     #line hidden
     using System;
@@ -75,7 +75,7 @@ using Lecture_CSharpBlazorApplication.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class TableTemplate<TItem> : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -83,16 +83,17 @@ using Lecture_CSharpBlazorApplication.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Shared\NavMenu.razor"
+#line 28 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\TableTemplate.razor"
        
-    private bool collapseNavMenu = true;
+    // HTML TAG 묶음을 RenderFragment에 넘겨주는 방식.
+    [Parameter]
+    public RenderFragment Header { get; set; }
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    [Parameter]
+    public RenderFragment<TItem> Row { get; set; }
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    [Parameter]
+    public IReadOnlyList<TItem> items { get; set; }
 
 #line default
 #line hidden

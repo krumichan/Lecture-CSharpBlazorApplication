@@ -91,7 +91,7 @@ using Lecture_CSharpBlazorApplication.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\FetchData.razor"
+#line 34 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\FetchData.razor"
        
     private WeatherForecast[] forecasts;
 
