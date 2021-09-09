@@ -75,6 +75,13 @@ using Lecture_CSharpBlazorApplication.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\Index.razor"
+using Lecture_CSharpBlazorApplication.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -83,6 +90,24 @@ using Lecture_CSharpBlazorApplication.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 33 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\Index.razor"
+               
+    protected override void OnInitialized()
+    {
+        // breakpoint를 사용하여 확인해 보면,
+        // paymentService의 _foodService에 자동으로
+        // 생성자 주입이 일어난 것을 확인할 수 있다.
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ScopedService scoped { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private TransientService transient { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SingletonService singleton { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private PaymentService paymentService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFoodService foodService { get; set; }
     }
 }
 #pragma warning restore 1591
