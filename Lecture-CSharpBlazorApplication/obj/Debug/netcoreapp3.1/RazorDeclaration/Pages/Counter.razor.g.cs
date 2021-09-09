@@ -93,6 +93,9 @@ using System.Threading;
 #nullable restore
 #line 13 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\Counter.razor"
        
+    [CascadingParameter(Name = "ThemeColor")]
+    string _color { get; set; }
+
     private int currentCount = 0;
 
     private void IncrementCount()

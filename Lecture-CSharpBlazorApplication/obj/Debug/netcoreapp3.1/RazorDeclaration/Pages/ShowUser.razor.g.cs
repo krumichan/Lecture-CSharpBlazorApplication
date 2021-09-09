@@ -90,14 +90,19 @@ using Lecture_CSharpBlazorApplication.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 20 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\ShowUser.razor"
+#line 22 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\ShowUser.razor"
        
+    [CascadingParameter(Name = "ThemeColor")]
+    string _color { get; set; }
 
     [Parameter]
     public List<UserData> Users { get; set; }
 
+    // EventCallback은 AspNet 함수로,
+    // 무언가의 수정이 일어났을 경우,
+    // 자동으로 StateHasChanged() 함수를 호출해준다.
     [Parameter]
-    public Action CallbackTest { get; set; }
+    public EventCallback CallbackTest { get; set; }
 
     // page 호출 시, 호출되는 함수.
     // Unity로 따지면 Start() 같은 함수.
@@ -117,7 +122,7 @@ using Lecture_CSharpBlazorApplication.Data;
     {
         Users.Remove(user);
 
-        CallbackTest.Invoke();
+        CallbackTest.InvokeAsync(null);
     }
 
 #line default

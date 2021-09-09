@@ -91,8 +91,11 @@ using Lecture_CSharpBlazorApplication.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\User.razor"
+#line 44 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\User.razor"
        
+    string _selectedColor = "Green";
+    List<string> _options = new List<string>() { "Green", "Red", "Blud" };
+
     List<UserData> _users = new List<UserData>();
     ShowUser _showUser;
 
@@ -113,7 +116,7 @@ using Lecture_CSharpBlazorApplication.Data;
     void CallbackTestFunc()
     {
         _inputName = "CallbackTest";
-        StateHasChanged();
+        // StateHasChanged();
     }
 
 #line default
