@@ -76,14 +76,13 @@ using Lecture_CSharpBlazorApplication.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\User.razor"
+#line 1 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\ShowUser.razor"
 using Lecture_CSharpBlazorApplication.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/user")]
-    public partial class User : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class ShowUser : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,29 +90,34 @@ using Lecture_CSharpBlazorApplication.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\User.razor"
+#line 20 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\Pages\ShowUser.razor"
        
-    List<UserData> _users = new List<UserData>();
-    ShowUser _showUser;
 
-    string _inputName;
-    string _btnClass = "btn btn-primary";
+    [Parameter]
+    public List<UserData> Users { get; set; }
 
-    void AddUser()
+    [Parameter]
+    public Action CallbackTest { get; set; }
+
+    // page 호출 시, 호출되는 함수.
+    // Unity로 따지면 Start() 같은 함수.
+    protected override void OnInitialized()
     {
-        _showUser.AddUser(new UserData() { Name = _inputName });
-        _inputName = "";
+        Users.Add(new UserData() { Name = "Jongseon" });
+        Users.Add(new UserData() { Name = "Jongwon" });
+        Users.Add(new UserData() { Name = "Alrisia" });
     }
 
-    void KickUser(UserData user)
+    public void AddUser(UserData user)
     {
-        _showUser.KickUser(user);
+        Users.Add(user);
     }
 
-    void CallbackTestFunc()
+    public void KickUser(UserData user)
     {
-        _inputName = "CallbackTest";
-        StateHasChanged();
+        Users.Remove(user);
+
+        CallbackTest.Invoke();
     }
 
 #line default

@@ -52,3 +52,5 @@ C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\Lecture-CSharpBlazorApplication.csproj.CopyComplete
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\User.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\Razor\Pages\User.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ShowUser.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication\obj\Debug\netcoreapp3.1\Razor\Pages\ShowUser.razor.g.cs
