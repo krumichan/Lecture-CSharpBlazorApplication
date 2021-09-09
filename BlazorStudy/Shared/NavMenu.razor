@@ -1,0 +1,109 @@
+﻿@*
+    Mobile Version을 위한 div로,
+    실행 후, 화면을 작게 만들어보면,
+    Menu를 펼치기 위한 button이 생김을 알 수 있다.
+*@
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">BlazorStudy</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="gofetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Go Fetch data
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="difflayoutcounter">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Different Layout Counter
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="navparamcounter">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Nav Param Counter
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+
+
+@* NavLink 또한 Component에 해당한다.
+
+// <a> : anchor와의 차이는 ?
+// <NavLink> 또한 내부적으로 <a href> Base로 되어 있다.
+// <a> 와는 Style 차이가 있을 뿐이다.
+
+//
+// Microsoft.AspNetCore.Components.Routing.NavLink
+//
+// 요약:
+//     A component that renders an anchor tag, automatically toggling its 'active' class
+//     based on whether its 'href' matches the current URI.
+public class NavLink : ComponentBase, IDisposable
+{
+    public NavLink();
+
+    //
+    // 요약:
+    //     Gets or sets the CSS class name applied to the NavLink when the current route
+    //     matches the NavLink href.
+    [Parameter]
+    public string ActiveClass { get; set; }
+    //
+    // 요약:
+    //     Gets or sets a collection of additional attributes that will be added to the
+    //     generated a element.
+    [Parameter(CaptureUnmatchedValues = true)]
+    public IReadOnlyDictionary<string, object> AdditionalAttributes { get; set; }
+    //
+    // 요약:
+    //     Gets or sets the child content of the component.
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+    //
+    // 요약:
+    //     Gets or sets a value representing the URL matching behavior.
+    [Parameter]
+    public NavLinkMatch Match { get; set; }
+    //
+    // 요약:
+    //     Gets or sets the computed CSS class based on whether or not the link is active.
+    protected string CssClass { get; set; }
+
+    public void Dispose();
+    protected override void BuildRenderTree(RenderTreeBuilder builder);
+    protected override void OnInitialized();
+    protected override void OnParametersSet();
+}
+
+*@

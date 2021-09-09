@@ -1,0 +1,16 @@
+﻿@page "/gofetchdata"
+@inject NavigationManager navManager;
+
+
+<h3>GoFetchData</h3>
+
+<button class="btn btn-primary" @onclick="MovFetchData">Go Fetch Data</button>
+<a class="btn btn-primary" href="FetchData">Move Fetch Data</a>
+
+
+@code {
+    private void MovFetchData()
+    {
+        navManager.NavigateTo("FetchData");
+    }
+}

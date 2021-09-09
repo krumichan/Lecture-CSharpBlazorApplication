@@ -1,0 +1,54 @@
+﻿
+<Router AppAssembly="@typeof(Program).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p>Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+
+@* Router 또한 Component에 해당한다.
+
+//
+// Microsoft.AspNetCore.Components.Routing.Router
+//
+// 요약:
+//     A component that supplies route data corresponding to the current navigation
+//     state.
+public class Router : IComponent, IHandleAfterRender, IDisposable
+{
+    public Router();
+
+    //
+    // 요약:
+    //     Gets or sets a collection of additional assemblies that should be searched for
+    //     components that can match URIs.
+    [Parameter]
+    public IEnumerable<Assembly> AdditionalAssemblies { get; set; }
+    //
+    // 요약:
+    //     Gets or sets the assembly that should be searched for components matching the
+    //     URI.
+    [Parameter]
+    public Assembly AppAssembly { get; set; }
+    //
+    // 요약:
+    //     Gets or sets the content to display when a match is found for the requested route.
+    [Parameter]
+    public RenderFragment<RouteData> Found { get; set; }
+    //
+    // 요약:
+    //     Gets or sets the content to display when no match is found for the requested
+    //     route.
+    [Parameter]
+    public RenderFragment NotFound { get; set; }
+
+    public void Attach(RenderHandle renderHandle);
+    public void Dispose();
+    public Task SetParametersAsync(ParameterView parameters);
+}
+
+*@
