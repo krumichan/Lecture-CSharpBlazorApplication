@@ -1,0 +1,38 @@
+﻿@typeparam TItem
+
+
+<h3>TableTemplate</h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            @Header
+            @*<th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in items)
+        {
+            <tr>
+                @Row(item)
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    // HTML TAG 묶음을 RenderFragment에 넘겨주는 방식.
+    [Parameter]
+    public RenderFragment Header { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem> Row { get; set; }
+
+    [Parameter]
+    public IReadOnlyList<TItem> items { get; set; }
+}
