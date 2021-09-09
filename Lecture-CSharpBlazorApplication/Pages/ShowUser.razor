@@ -1,0 +1,51 @@
+﻿@using Lecture_CSharpBlazorApplication.Data;
+
+
+<p>
+    Users: <b>@Users.Count</b>
+</p>
+<br />
+
+<ul calss="list-group">
+    @foreach (UserData user in Users)
+    {
+        <li @key="user" class="list-group-item">
+            <button type="button" class="btn btn-link" @onclick="(() => KickUser(user))">[Kick]</button>
+            <label>@user.Name</label>
+        </li>
+    }
+</ul>
+
+
+@code {
+
+    [Parameter]
+    public List<UserData> Users { get; set; }
+
+    // EventCallback은 AspNet 함수로,
+    // 무언가의 수정이 일어났을 경우,
+    // 자동으로 StateHasChanged() 함수를 호출해준다.
+    [Parameter]
+    public EventCallback CallbackTest { get; set; }
+
+    // page 호출 시, 호출되는 함수.
+    // Unity로 따지면 Start() 같은 함수.
+    protected override void OnInitialized()
+    {
+        Users.Add(new UserData() { Name = "Jongseon" });
+        Users.Add(new UserData() { Name = "Jongwon" });
+        Users.Add(new UserData() { Name = "Alrisia" });
+    }
+
+    public void AddUser(UserData user)
+    {
+        Users.Add(user);
+    }
+
+    public void KickUser(UserData user)
+    {
+        Users.Remove(user);
+
+        CallbackTest.InvokeAsync(null);
+    }
+}
