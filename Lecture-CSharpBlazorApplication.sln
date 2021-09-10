@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorStudy", "BlazorStudy\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorStudyFormValidation", "BlazorStudyFormValidation\BlazorStudyFormValidation.csproj", "{CA073808-771F-4D0A-9DE8-550F50C462A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStudyState", "BlazorStudyState\BlazorStudyState.csproj", "{079B6C46-168F-4891-A70E-699F1BF12F4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorStudyState", "BlazorStudyState\BlazorStudyState.csproj", "{079B6C46-168F-4891-A70E-699F1BF12F4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BlazorStudyState.Shared
+namespace BlazorStudyState.Pages
 {
     #line hidden
     using System;
@@ -75,7 +75,8 @@ using BlazorStudyState.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/JSInterop")]
+    public partial class JSInterop : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -83,36 +84,27 @@ using BlazorStudyState.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorStudyState\Shared\NavMenu.razor"
+#line 21 "C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorStudyState\Pages\JSInterop.razor"
        
-    private bool collapseNavMenu = true;
+    string _name = "";
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    public async void HelloWorld()
     {
-        collapseNavMenu = !collapseNavMenu;
+        // 첫번째 인자 : 호출 함수명.
+        // 두번째 인자 : 호출 함수가 받을 인자.
+        await JSRuntime.InvokeVoidAsync("testFunction.helloWorld", null);
     }
 
-    protected override void OnInitialized()
+    public async void InputName()
     {
-        CounterState.OnStateChanged += onStateChanged;
-    }
-
-    void onStateChanged()
-    {
-        this.StateHasChanged();
-    }
-
-    void IDisposable.Dispose()
-    {
-        CounterState.OnStateChanged -= onStateChanged; 
+        _name = await JSRuntime.InvokeAsync<string>("testFunction.inputName", "Input Name");
+        StateHasChanged();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BlazorStudyState.Data.CounterState CounterState { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
     }
 }
 #pragma warning restore 1591

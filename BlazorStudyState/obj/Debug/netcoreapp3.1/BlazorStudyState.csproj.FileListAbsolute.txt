@@ -50,3 +50,5 @@ C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorSt
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorStudyState\obj\Debug\netcoreapp3.1\BlazorStudyState.pdb
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorStudyState\obj\Debug\netcoreapp3.1\BlazorStudyState.genruntimeconfig.cache
 C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorStudyState\obj\Debug\netcoreapp3.1\BlazorStudyState.csproj.CopyComplete
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorStudyState\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\JSInterop.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-CSharpBlazorApplication\BlazorStudyState\obj\Debug\netcoreapp3.1\Razor\Pages\JSInterop.razor.g.cs
