@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lecture-CSharpBlazorApplication", "Lecture-CSharpBlazorApplication\Lecture-CSharpBlazorApplication.csproj", "{8150BC39-D333-4409-B233-819E18FB256C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStudy", "BlazorStudy\BlazorStudy.csproj", "{1C2F03AF-5267-4316-A039-EF305CD9EEDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorStudy", "BlazorStudy\BlazorStudy.csproj", "{1C2F03AF-5267-4316-A039-EF305CD9EEDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorStudyFormValidation", "BlazorStudyFormValidation\BlazorStudyFormValidation.csproj", "{CA073808-771F-4D0A-9DE8-550F50C462A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1C2F03AF-5267-4316-A039-EF305CD9EEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C2F03AF-5267-4316-A039-EF305CD9EEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C2F03AF-5267-4316-A039-EF305CD9EEDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA073808-771F-4D0A-9DE8-550F50C462A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA073808-771F-4D0A-9DE8-550F50C462A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA073808-771F-4D0A-9DE8-550F50C462A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA073808-771F-4D0A-9DE8-550F50C462A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
